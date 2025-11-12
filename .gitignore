@@ -1,0 +1,98 @@
+﻿##############################
+# 📦 .NET + Visual Studio
+##############################
+
+# Build and bin folders
+bin/
+obj/
+Debug/
+Release/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / VS Code
+.idea/
+.vscode/
+
+##############################
+# ⚙️ Logs, caches, and temp files
+##############################
+*.log
+*.tlog
+*.tmp
+*.cache
+*.dbmdl
+*.db
+*.mdf
+*.ldf
+
+##############################
+# 🧰 Environment and config files
+##############################
+.env
+appsettings.Development.json
+secrets.json
+
+##############################
+# 🧱 Entity Framework & DB Migrations
+##############################
+Migrations/
+*.sqlite
+*.bak
+
+##############################
+# 🐳 Docker and container
+##############################
+docker-compose*
+*.dockerfile
+.dockerignore
+
+##############################
+# 📦 Publish / Distribution outputs
+##############################
+publish/
+out/
+dist/
+artifacts/
+
+##############################
+# 🧩 Frontend (if Angular added later)
+##############################
+/ClientApp/node_modules/
+/ClientApp/dist/
+/ClientApp/.angular/cache/
+/ClientApp/.env
+
+##############################
+# 🧠 Machine learning / data models (future)
+##############################
+/ml_models/
+/data/
+/notebooks/
+
+##############################
+# 🧾 OS-specific junk
+##############################
+Thumbs.db
+.DS_Store
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+##############################
+# ✅ Keep these files
+##############################
+!.gitignore
+!SmartLedger.sln
+!SmartLedger.csproj
+!Dockerfile
+!appsettings.json
+!Program.cs
+!Controllers/
+!BAL/
+!DAL/
