@@ -1,8 +1,6 @@
-﻿using SmartLedger.DAL.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using SmartLedger.DAL.Context;
 using SmartLedger.DAL.Entities;
-using SmartLedger.DAL.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
 using SmartLedger.DAL.Interfaces;
 
 namespace SmartLedger.DAL
@@ -19,6 +17,14 @@ namespace SmartLedger.DAL
         public async Task<User?> GetByEmailAsync(string email)
         {
             return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+        }
+
+        public async Task<IEnumerable<User>> GetUsersByOrgAsync(Guid orgId)
+        {
+            return await _context.Users
+                .Where(u => u.OrgId == orgId)
+                .OrderByDescending(u => u.CreatedAt)
+                .ToListAsync();
         }
     }
 }
