@@ -52,6 +52,7 @@ builder.Services.AddScoped<IPaymentService, PaymentService>();
 builder.Services.AddScoped<ICashflowService, CashflowService>();
 builder.Services.AddScoped<IOrganizationService, OrganizationService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IOpenAIService, OpenAIService>();
 // 🚀 Add Controllers
 builder.Services.AddControllers();
 
