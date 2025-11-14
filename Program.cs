@@ -8,6 +8,7 @@ using SmartLedger.DAL.Context;
 using SmartLedger.DAL.Interfaces;
 using SmartLedger.DAL;
 using System.Text;
+using SmartLedger.DAL.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,10 +29,23 @@ builder.Services.AddDbContext<SmartLedgerDbContext>(options =>
 
 // 🚀 Register repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IVendorRepository, VendorRepository>();
+builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
+builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
+builder.Services.AddScoped<ICashflowPredictionRepository, CashflowPredictionRepository>();
+
+
+
+// Ensure invoice repository is registered (used by PaymentService)
+builder.Services.AddScoped<IRepository<Invoice>, Repository<Invoice>>();
+
 
 // 🚀 Register services
 builder.Services.AddScoped<IAuthService, AuthService>();
-
+builder.Services.AddScoped<IVendorService, VendorService>();
+builder.Services.AddScoped<IInvoiceService, InvoiceService>();
+builder.Services.AddScoped<IPaymentService, PaymentService>();
+builder.Services.AddScoped<ICashflowService, CashflowService>();
 // 🚀 Add Controllers
 builder.Services.AddControllers();
 
