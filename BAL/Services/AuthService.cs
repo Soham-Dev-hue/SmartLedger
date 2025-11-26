@@ -2,13 +2,11 @@
 using SmartLedger.DAL.Models;
 using SmartLedger.DAL.Entities;
 using SmartLedger.DAL.Interfaces;
-using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using BC = BCrypt.Net.BCrypt;
-using SmartLedger.DAL.Models;
 
 namespace SmartLedger.BAL.Services
 {
