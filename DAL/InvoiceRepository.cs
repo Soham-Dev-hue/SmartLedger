@@ -2,7 +2,6 @@
 using SmartLedger.DAL.Context;
 using SmartLedger.DAL.Entities;
 using SmartLedger.DAL.Interfaces;
-using SmartLedger.DAL.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
